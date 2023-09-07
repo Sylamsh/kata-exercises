@@ -1,1 +1,1 @@
-[ref](https://tddmanifesto.com/exercises/)
+ref: [https://tddmanifesto.com/exercises/](https://tddmanifesto.com/exercises/)
