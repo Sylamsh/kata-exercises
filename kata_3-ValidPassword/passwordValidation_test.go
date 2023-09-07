@@ -1,7 +1,6 @@
 package password
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -41,10 +40,10 @@ func TestValidatePassword_MulitpleErrors(t *testing.T) {
 	isValid, err := ValidatePassword("abc")
 	assert.Equal(t, isValid, false)
 	if err != nil {
-		assert.Equal(t, strings.Contains(err.Error(), "The password must contain at least 2 numbers"), true)
-		assert.Equal(t, strings.Contains(err.Error(), "Password must be at least 8 characters"), true)
-		assert.Equal(t, strings.Contains(err.Error(), "Password must contain at least one capital letter"), true)
-		assert.Equal(t, strings.Contains(err.Error(), "Password must contain at least one special character"), true)
+		assert.Contains(t, err.Error(), "The password must contain at least 2 numbers")
+		assert.Contains(t, err.Error(), "Password must be at least 8 characters")
+		assert.Contains(t, err.Error(), "Password must contain at least one capital letter")
+		assert.Contains(t, err.Error(), "Password must contain at least one special character")
 	}
 }
 
